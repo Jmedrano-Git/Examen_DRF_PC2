@@ -86,3 +86,5 @@ Cada compañía puede tener varios juegos asociados, y la API cuenta con operaci
    
    # Eliminar una compañía
    curl -X DELETE http://127.0.0.1:8000/api/v1/companies/1/
+         
+## 📍 Endpoints "Games"
