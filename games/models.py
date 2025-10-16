@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Company(models.Model):
+class CompanyDb(models.Model):
     name = models.CharField(max_length=200)
     country = models.CharField(max_length=100, blank=True)
 
@@ -16,11 +16,11 @@ class Company(models.Model):
         return self.name
     
 
-class Game(models.Model):
+class GameDb(models.Model):
     title = models.CharField(max_length=200)
     genre = models.CharField(max_length=200)
     release_year = models.IntegerField(null=True, blank=True)
-    company = models.ForeignKey(Company, related_name='games', on_delete=models.CASCADE)
+    company = models.ForeignKey(CompanyDb, related_name='games', on_delete=models.CASCADE)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
