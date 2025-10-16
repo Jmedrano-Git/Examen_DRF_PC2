@@ -32,4 +32,57 @@ Cada compañía puede tener varios juegos asociados, y la API cuenta con operaci
    ```bash
    git clone <URL-del-repositorio>
    cd Examen_DRF2
+
+2. Crear y activar el entorno virtual:
+   ```bash
+   python -m venv venv
+   venv\Scripts\activate   # En Windows
+   # o
+   source venv/bin/activate   # En Linux/Mac
+
+3. Instalar las dependencias:
+   ```bash
+   pip install -r requirements.txt
+
+4. Aplicar las migraciones:
+   ```bash
+   python manage.py migrate
+
+5. Ejecutar el servidor:
+   ```bash
+   python manage.py runserver
+
+6. Abrir en el navegador:
+   ```bash
+   http://127.0.0.1:8000/api/docs/ #para la documentación
+   http://127.0.0.1:8000/api/v1 #la app
+
+## 📍 Endpoints "Companies"
+
+- **GET - /api/v1/companies/**
+- **POST - /api/v1/companies/** 
+- **GET - /api/v1/companies/{id}/** #Para la búsqueda unitaria
+- **PUT - /api/v1/companies/{id}/**
+- **DELETE - /api/v1/companies/{id}/**
+
+# Ejemplos:
+
+```bash
+   # Listar compañías
+   curl -X GET http://127.0.0.1:8000/api/v1/companies/
+
+   # Crear compañía
+   curl -X POST http://127.0.0.1:8000/api/v1/companies/ \
+     -H "Content-Type: application/json" \
+     -d '{"name": "Nintendo", "country": "Japón"}'
    
+   # Ver una compañía por ID
+   curl -X GET http://127.0.0.1:8000/api/v1/companies/1/
+   
+   # Actualizar una compañía
+   curl -X PATCH http://127.0.0.1:8000/api/v1/companies/1/ \
+     -H "Content-Type: application/json" \
+     -d '{"country": "EE.UU."}'
+   
+   # Eliminar una compañía
+   curl -X DELETE http://127.0.0.1:8000/api/v1/companies/1/
