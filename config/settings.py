@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #Lo que isntale
     'rest_framework',
-    'drf_sspectacular',
+    'drf_spectacular',
     #My apps
     'games'
 ]
