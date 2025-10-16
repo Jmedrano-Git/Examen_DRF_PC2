@@ -1,2 +1,2 @@
 from rest_framework import serializers
-from .models import Company, Game
+from .models import CompanyDb, GameDb
